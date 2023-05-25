@@ -1,0 +1,72 @@
+#feed-body {
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+}
+
+.post-container {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-button {
+    border: none;
+    background-color: transparent;
+    font-size: 13px;
+}
+.post-button:hover {
+    background-color: #f8f9fd;
+    color: #f7595a;
+} 
+
+.number-of-interacts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.number-of-interacts-button {
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+}
+
+.number-of-interacts-button:hover {
+    background-color: none;
+    color: #f7595a;
+    text-decoration: underline;
+}
+
+.job-description {
+    transform: translateY(140%);
+}
+
+/* CSS to overwrite boostrap Cards */
+.card {
+    border-radius: 20px;
+    margin: 10px;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* Advanced feed CSS */
+.comment-formatting {
+    vertical-align: top;
+    display: inline-block;
+}
+
+#comment-btn {
+    margin-top: 20px;
+}
+
+.feed-username {
+    margin-top: 10px;
+}

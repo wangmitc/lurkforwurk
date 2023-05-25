@@ -1,0 +1,22 @@
+.input-icons i {
+    position: absolute;
+}
+  
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+  
+#icon {
+    padding: 10px;
+    min-width: 40px;
+    margin-left: 420px;
+}
+
+#search-email {
+    padding-right: 50px;
+}
+
+#search-user-btn {
+    margin-top: 15px;
+}

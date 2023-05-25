@@ -1,0 +1,48 @@
+#login-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-items: center;
+    padding-top: 112px;
+    padding-bottom: 112px;
+    background-color: #f8f9fd;
+}
+
+#login{
+    background-color: #f8f9fd;
+}
+
+.login-flex-box{
+    justify-content: center;
+    padding: 48px;
+    width: 460px;
+    height: 468px;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+#login-box {
+    background-color: #ffffff;
+    color:#000000;
+}
+
+#registration-box {
+    background: linear-gradient(to bottom right, #f7595a, #f35586);
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#sign-up-btn{
+    background: none;
+    color: #ffffff;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    width: 102px;
+}
+
+#sign-up-btn:hover{
+    background: white;
+    color: #f35586;
+}

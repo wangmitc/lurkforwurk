@@ -1,0 +1,21 @@
+#create-job-flexbox {
+    justify-content: center;
+    padding: 30px;
+    width: 600px;
+    height: 625px;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    background-color: #ffffff;
+}
+
+.delete-btn {
+    color: #f7595a;
+}
+
+.delete-btn:hover {
+    color: #f7595a;
+}
+
+#create-job-back-btn:hover {
+    color: #f7595a;
+}

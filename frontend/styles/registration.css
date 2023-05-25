@@ -1,0 +1,33 @@
+/* base styles, feel free to edit */
+#registration {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #f7595a, #f35586);
+}
+
+#registration-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+
+#registration-flexbox {
+    justify-content: center;
+    padding: 65px;
+    width: 600px;
+    height: 670px;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    background-color: #ffffff;
+}
+
+#register-wrapper {
+    padding: 35px;
+}
+
+#register-back-btn:hover {
+   color: #f7595a; 
+}

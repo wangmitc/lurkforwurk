@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LurkForWork</title>
+    <link rel="icon" type="image/x-icon" href="/assets/logo.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome 4 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- You can add your styles and scripts here -->
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/global.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/login.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/registration.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/profile.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/feed.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/nav.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/job.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/search.css"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+</head>
+<body>    
+    <main role="main">
+        <!-- Login  -->
+        <div id="login" class>
+            <div id="login-body">
+                <div class="login-flex-box" id="login-box">
+                    <h3>Sign in</h3>
+                    <form method="post" name="login-form">
+                        <div class="form-input-row">
+                            <label for="login-email">EMAIL</label>
+                            <input class="form-input" type="email" id="login-email" name="login-email">
+                        </div>
+                        <div class="form-input-row">
+                            <label for="login-password">PASSWORD</label>
+                            <input  class="form-input" type="password" id="login-password" name="login-password">
+                        </div>
+                        <br>
+                        <button type="button" class="submit-button" id="login-button">Sign In</button>
+                    </form>
+                </div>
+                <div class="login-flex-box" id="registration-box">
+                    <div>
+                        <h2>Welcome to lurkforwork</h2>
+                        <p>Don't have an acount?</p>
+                        <button type="button" class="submit-button" id="sign-up-btn">Sign up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register -->
+        <div id="registration" class="hide">
+            <div id="registration-container" >
+                <div id="registration-flexbox">
+                    <button type="button" id="register-back-btn" class="back-btn"><i class="fa fa-angle-left fa-fw" id="back-arrow"  aria-hidden="true"></i> <span>Back</span></button>    
+                    <div id="register-wrapper">
+                        <h2>Sign Up</h2>
+                        <form name="registration-form">
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">NAME <span class="required">*</span></label>
+                                    <input class="form-input" id="registration-name" type="text" name="name" required>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">EMAIL <span class="required">*</span></label>
+                                    <input class="form-input" id="registration-email" type="email" name="email" required>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">PASSWORD <span class="required">*</span></label>
+                                    <input class="form-input" id="registration-password" type="password" name="password" required>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">CONFIRM PASSWORD <span class="required">*</span></label>
+                                    <input class="form-input" id="registration-confirm-password" type="password" name="confirm_password" required>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="button" id="registration-button" class="submit-button">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation bar -->
+        <div id="nav-bar" class="topnav hide">
+            <a href="javascript:void(0);" id="logo" class>LurkForWork</a>
+            <a href="javascript:void(0);" id="show-feed-btn" class="active"><i class="fa fa-list" aria-hidden="true"></i> Feed</a>
+            <a href="javascript:void(0);" id="add-job-btn" class><i class="fa fa-plus-square-o fa-2xl" aria-hidden="true"></i> Create job</a>
+            <a href="javascript:void(0);" data-toggle="modal" data-target="#searchModal" id="search-btn" class><i class="fa fa-search" aria-hidden="true"></i> Search</a>
+            <a href="javascript:void(0);" id="view-profile-btn" class> <i class="fa fa-user" aria-hidden="true"></i> View profile</a>
+            <a href="javascript:void(0);" id="logout-button" class="split"> <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a>
+            <a href="javascript:void(0);" id="show-more-btn" class="icon">
+              <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <!-- Feed -->
+        <div id="feed" class="hide">
+            <div id="empty-feed" class="alert">
+                <i class="fa fa-frown-o fa-4x sad-face" aria-hidden="true"></i> 
+                <p>There are no jobs to show</p> 
+            </div>
+            <div id="feed-body">
+            </div>
+        </div>
+
+        <!-- View profile -->
+        <div id="view-profile" class="hide">
+            <div id="profile-group">
+                <div class="group">
+                    <div id="profile-flex-container">
+                        <div id="profile-info">
+                            <div class="inline">
+                                <div class="profile-image-cropper" id="large-profile-image">
+                                    <img id="profile-image" class="profile-image-sizer" src="" alt="Avatar" />
+                                </div>
+                            </div>
+                            <div id="profile-name-email">
+                                <h6 id="profile-username" class="username"></h6>
+                                <h6 id="profile-email" class="email"></h6>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn" id="profile-action-btn"></button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <button type="button" data-toggle="modal" data-target="#postModalCenter" class="btn" id="watchees"></button>
+                <hr class="solid">
+            </div>
+            <div id="empty-profile-feed" class="alert">
+                <i class="fa fa-frown-o fa-4x sad-face" aria-hidden="true"></i> 
+                <p>You have no jobs to show</p> 
+            </div>
+            <div id="profile-feed-body">
+            </div>
+        </div>
+
+        <!-- Edit profile -->
+        <div id="edit-profile" class="hide">
+            <div class="edit-add-container">
+                <div id="edit-profile-flexbox">
+                    <button type="button" id="back-btn" class="back-btn"><i class="fa fa-angle-left fa-fw" id="back-arrow"  aria-hidden="true"></i> <span>Back</span></button>    
+                    <div id="edit-profile-wrapper">
+                        <h2>Edit Profile</h2>
+                        <form name="edit-profile-form">
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">NAME</label>
+                                    <input class="form-input" id="update-name" type="text" name="name">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">EMAIL</label>
+                                    <input class="form-input" id="update-email" type="email" name="email">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">PASSWORD</label>
+                                    <input class="form-input" id="update-password" type="password" name="password">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">CONFIRM PASSWORD</label>
+                                    <input class="form-input" id="update-confirm-password" type="password" name="confirm_password">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">PROFILE IMAGE</label>
+                                    <input type="file" id="profile-img" name="profile-img" accept="image/*">
+                                </div>
+                            </div>
+                            <div>
+                                <button type="button"class="submit-button" id="save-profile-changes-btn">Save changes</button>      
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Add a job -->
+        <div id="add-job" class="hide">
+            <div class="edit-add-container">
+                <div id="create-job-flexbox">
+                    <button type="button" id="create-job-back-btn" class="back-btn"><i class="fa fa-angle-left fa-fw" id="back-arrow"  aria-hidden="true"></i> <span>Back</span></button>    
+                    <div id="edit-profile-wrapper">
+                        <h2>Create Job</h2>
+                        <form name="create-job-form">
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">TITLE <span class="required">*</span></label>
+                                    <input class="form-input" id="create-title" type="text" name="title">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">START DATE <span class="required">*</span></label>
+                                    <input class="form-input" id="create-start-date" type="date" name="start-date">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">DESCRIPTION</label>
+                                    <input class="form-input" id="create-description" type="text" name="password">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">IMAGE  <span class="required">*</span></label>
+                                    <input type="file" id="add-job-image" name="profile-img" accept="image/*">
+                                </div>
+                            </div>
+                            <div>
+                                <button type="button" class="submit-button" id="create-job-btn">Post Job</button>      
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit a job -->
+        <div id="edit-job" class="hide">
+            <div class="edit-add-container">
+                <div id="create-job-flexbox">
+                    <button type="button" id="edit-job-back-btn" class="back-btn"><i class="fa fa-angle-left fa-fw" id="back-arrow"  aria-hidden="true"></i> <span>Back</span></button>    
+                    <div id="edit-profile-wrapper">
+                        <h2>Edit Job</h2>
+                        <form name="edit-job-form">
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">TITLE  <span class="required">*</span></label>
+                                    <input class="form-input" id="edit-title" type="text" name="title" required>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">START DATE  <span class="required">*</span></label>
+                                    <input class="form-input" id="edit-start-date" type="date" name="start-date" required>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">DESCRIPTION</label>
+                                    <input class="form-input" id="edit-description" type="text" name="password">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-input-row">
+                                    <label class="label">IMAGE</label>
+                                    <input type="file" id="edit-job-image" name="profile-img" accept="image/*" required>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="button" class="submit-button" id="edit-job-btn">Edit Job</button>      
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button to trigger the error modal -->
+        <button type="button" class="btn btn-primary hide" data-toggle="modal" data-target="#errorModal" id="errorButton"></button>
+        
+        <!-- Error modal -->
+        <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content  modal-lg">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="errorMessage"></p>
+                        <button type="button"class="submit-button" id="close-button" data-dismiss="modal" aria-label="Close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Post Modal -->
+        <div class="modal fade" id="postModalCenter" tabindex="-1" role="dialog" aria-labelledby="postModalCenterLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" id="modal-close-btn" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div id="postModalBody" class="modal-body">
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Search Modal -->
+        <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Watch user</h5>
+                    <button type="button" class="close" id="search-close-btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="search-modal-form">
+                            <div class="input-icons">
+                                <i class="fa fa-envelope-o" id="icon" aria-hidden="true"></i>
+                                <input class="form-input"  id="search-email" type="email" name="email" placeholder="Enter account email" >
+                            </div>
+                            <button type="button" class="submit-button" id="search-user-btn">Watch</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comment Modal -->
+        <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create comment</h5>
+                    <button type="button" class="close" id="comment-modal-close-btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="post-comment">
+                            <input class="form-input"  id="comment" type="text" name="comment" placeholder="Add a comment">
+                            <button type="button" class="submit-button" id="comment-submit-btn">Post comment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- feed card template to copy using copyNode -->
+    <div id="feed-card" class="card grow hide">
+        <div class="card-body">
+            <div class="group">
+                <div class="post-container">
+                    <div>
+                        <div class="inline">
+                            <div class="profile-image-cropper">
+                                <img id="card-profile-image" src="" class="profile-image-sizer" alt="Avatar" />
+                            </div>
+                        </div>
+                        <div class="inline">
+                            <h6 class="username feed-username">
+                                <a href="javascript:void(0);" class="strip" id="card-username">
+                                    User
+                                </a>
+                            </h6>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="creator-post-options" class="dropdown">
+                            <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a id="edit-post" class="dropdown-item" href="javascript:void(0);">Edit</a>
+                            <a id="delete-post" class="dropdown-item delete-btn" href="javascript:void(0);">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-container">
+                <div>
+                    <h5 id="card-title" class="card-title">Job title</h5>
+                </div>
+                <div>
+                    <h6 id="card-date" class="card-subtitle mb-2 text-muted">Date</h6>
+                </div>
+            </div>
+            <div id="card-job-start">
+                <h6 id="card-start-date" class="card-subtitle mb-2 text-muted">Start Date</h6>
+            </div>
+            <hr class="solid">
+            <p id="card-text">Job Description: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <img id="card-image" class="card-img-bottom" src="" alt="Card image">
+        <div class="card-body">
+            <div class="number-of-interacts">
+                <div>
+                    <button type="button" id="card-likes" class="number-of-interacts-button" data-toggle="modal" data-target="#postModalCenter">'insert numbers of likes' likes</button>
+                </div>
+                <div>
+                    <button type="button" id="card-comments" class="number-of-interacts-button" data-toggle="modal" data-target="#postModalCenter">'insert numbers of comments' comments</button>
+                </div>
+            </div>
+            <hr class="solid">
+            <button type="button" id="like-button" class="post-button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like</button>
+            <button type="button" id="comment-button" data-toggle="modal" data-target="#commentModal" class="post-button"><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</button>
+        </div>
+    </div>
+
+    <!-- Like card template to copy using copyNode -->
+    <div id="like-card" class="card hide">
+        <div class="card-body">
+            <div class="inline">
+                <img id="like-card-profile-image" src="" class="rounded-circle" style="width: 50px;" alt="Avatar" />
+            </div>
+            <div class="inline">
+                <a href="javascript:void(0);" class="strip username" id="like-card-username">
+                    User
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comment card template to copy using copyNode -->
+    <div id="comment-card" class="card hide">
+        <div class="card-body">
+            <div class="comment-formatting">
+                <img id="comment-profile-image" src="" class="rounded-circle" style="width: 50px;" alt="Avatar" />
+            </div>
+            <div class="comment-formatting">
+                <a href="javascript:void(0);" class="strip username" id="comment-username">
+                    User
+                </a>                
+                <p id="card-text" class="job-description">Job Description: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Watchee card template to copy using copyNode -->
+    <div id="watchee-card" class="card hide">
+        <div class="card-body">
+            <div class="inline">
+                <img id="watchee-card-profile-image" src="" class="rounded-circle" style="width: 50px;" alt="Avatar" />
+            </div>
+            <div class="inline">
+                <a href="javascript:void(0);" class="strip username" id="watchee-card-username">
+                    User
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- filled thumbs up -->
+    <i id="filledThumb" class="fa fa-thumbs-up hide" aria-hidden="true" ></i>
+
+    <!-- unfilled thumbs up -->
+    <i id="unfilledThumb" class="fa fa-thumbs-o-up hide" aria-hidden="true"></i>
+
+    <!-- Bootstrap JavaScript -->
+    <script type="module" src="src/main.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
